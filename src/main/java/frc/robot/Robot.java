@@ -60,27 +60,10 @@ public class Robot extends TimedRobot {
   public void teleopPeriodic() {
     //Previewing the output of gyro's angle
     System.out.println(Math.round(gyro.getAngle()));
+    //Printing the number in the command prompts (probability: 0 and 1 degrees ko chech nhieu the dau lol)
 
     //Setting servo as Gimbal
     servoCamera.set(0.5 - gyro.getAngle()/175); 
     //NOTE: I don't really know about this algorthms so i'm just a copy cat tho smth ik is that it moves pretty slow
   }
-
-  @Override
-  public void disabledInit() {}
-
-  @Override
-  public void disabledPeriodic() {}
-
-  @Override
-  public void testInit() {}
-
-  @Override
-  public void testPeriodic() {}
-
-  @Override
-  public void simulationInit() {}
-
-  @Override
-  public void simulationPeriodic() {}
 }

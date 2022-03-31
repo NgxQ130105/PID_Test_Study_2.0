@@ -41,12 +41,16 @@ public class Robot extends TimedRobot {
 
   @Override
   public void autonomousInit() {
+    gyro.reset();
+    //Reset everytime Auto is on
   }
 
   
   @Override
   public void autonomousPeriodic() {
-  
+    //Some written random Maths algorithms not by me
+    
+
   }
 
   @Override
@@ -60,7 +64,7 @@ public class Robot extends TimedRobot {
   public void teleopPeriodic() {
     //Previewing the output of gyro's angle
     System.out.println(Math.round(gyro.getAngle()));
-    //Printing the number in the command prompts (probability: 0 and 1 degrees ko chech nhieu the dau lol)
+    //Printing the number in the command prompts (probability: 0 to 1 degrees ko chech nhieu the dau lol)
 
     //Setting servo as Gimbal
     servoCamera.set(0.5 - gyro.getAngle()/175); 

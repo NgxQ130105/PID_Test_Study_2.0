@@ -49,8 +49,12 @@ public class Robot extends TimedRobot {
   @Override
   public void autonomousPeriodic() {
     //Some written random Maths algorithms not by me
-    
-
+    if (Math.abs(gyro.getAngle()) <= 3) {
+      leftMotor.set(leftSlow - (gyro.getAngle()/15));
+      rightMotor.set(rightSlow - (gyro.getAngle()/15));
+      //If the PID Controller turns no more than 3 degrees
+    } else if (Math.abs(gyro.getAngle()) > 10) {
+    }
   }
 
   @Override

@@ -53,7 +53,16 @@ public class Robot extends TimedRobot {
       leftMotor.set(leftSlow - (gyro.getAngle()/15));
       rightMotor.set(rightSlow - (gyro.getAngle()/15));
       //If the PID Controller turns no more than 3 degrees
-    } else if (Math.abs(gyro.getAngle()) > 10) {
+    } else if (Math.abs(gyro.getAngle()) < 10) {
+      if (gyro.getAngle() > 0) {
+        leftMotor.set(leftSlow);
+        rightMotor.set(rightSlow * 1.1);
+      }
+      if (gyro.getAngle() < 0) {
+        rightMotor.set(rightSlow);
+        leftMotor.set(rightSlow * 1.1);
+      }
+
     }
   }
 
@@ -73,5 +82,5 @@ public class Robot extends TimedRobot {
     //Setting servo as Gimbal
     servoCamera.set(0.5 - gyro.getAngle()/175); 
     //NOTE: I don't really know about this algorthms so i'm just a copy cat tho smth ik is that it moves pretty slow
-  }
+  } 
 }

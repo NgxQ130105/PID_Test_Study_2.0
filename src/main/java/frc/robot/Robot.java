@@ -66,6 +66,11 @@ public class Robot extends TimedRobot {
       while (gyro.getAngle() > 10 && isAutonomous()) {
         leftMotor.set(-rotateSpeed);
         rightMotor.set(-rotateSpeed);
+      } 
+    } else {
+      while (gyro.getAngle() <-10 && isAutonomous()) {
+        leftMotor.set(rotateSpeed);
+        rightMotor.set(rotateSpeed);
       }
     }
   }

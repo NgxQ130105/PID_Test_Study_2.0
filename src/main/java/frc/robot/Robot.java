@@ -80,17 +80,16 @@ public class Robot extends TimedRobot {
           leftMotor.set(rotateSpeedSlow);
           rightMotor.set(rotateSpeedSlow);
       }
-      while (gyro.getAngle() < 0 && isAutonomous()) {
-        leftMotor.set(rotateSpeedSlow);
-        rightMotor.set(rotateSpeedSlow);
+        while (gyro.getAngle() < 0 && isAutonomous()) {
+          leftMotor.set(rotateSpeedSlow);
+          rightMotor.set(rotateSpeedSlow);
       } 
-      while (gyro.getAngle() > 0 && isAutonomous()) {
-        leftMotor.set(-rotateSpeedSlow);
-        rightMotor.set(-rotateSpeedSlow);
+        while (gyro.getAngle() > 0 && isAutonomous()) {
+          leftMotor.set(-rotateSpeedSlow);
+          rightMotor.set(-rotateSpeedSlow);
       }
     }
   }
-
   @Override
   public void teleopInit() {
     //Upon starting teleOP, the initial speed is set to 0 for both motors
